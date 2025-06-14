@@ -1,0 +1,633 @@
+Day-3
+
+Question 1 - SpringSeason
+
+import java.util.Scanner;
+public class SpringSeason {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int month = sc.nextInt();
+        int day = sc.nextInt();
+        boolean isSpring = (month == 3 && day >= 20) || 
+                           (month == 4) || 
+                           (month == 5) || 
+                           (month == 6 && day <= 20);
+        System.out.println(isSpring ? "Its a Spring Season" : "Not a Spring Season");
+    }
+}
+
+
+Question 2 - Sum of N Natural Numbers (for loop)
+
+import java.util.Scanner;
+public class NaturalSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n <= 0) {
+            System.out.println("Not a natural number.");
+            return;
+        }
+        int sum = 0;
+        for (int i = 1; i <= n; i++) sum += i;
+        int formula = n * (n + 1) / 2;
+        System.out.println("Loop sum: " + sum);
+        System.out.println("Formula sum: " + formula);
+        System.out.println(sum == formula ? "Both results match." : "Mismatch!");
+    }
+}
+
+
+Question 3 - Divisible by 5
+
+import java.util.Scanner;
+public class DivisibleBy5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        System.out.println("Is the number " + number + " divisible by 5? " + (number % 5 == 0));
+    }
+}
+
+
+Question 4 - Sum Until 0 (while loop)
+
+import java.util.Scanner;
+public class SumUntilZero {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double total = 0.0, num;
+        while ((num = sc.nextDouble()) != 0) {
+            total += num;
+        }
+        System.out.println("Total sum: " + total);
+    }
+}
+
+
+Question 5 - Sum Until 0 or Negative (break)
+
+import java.util.Scanner;
+public class SumUntilNegative {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double total = 0.0;
+        while (true) {
+            double input = sc.nextDouble();
+            if (input <= 0) break;
+            total += input;
+        }
+        System.out.println("Total sum: " + total);
+    }
+}
+
+
+Question 6 - Factorial (for loop)
+
+import java.util.Scanner;
+public class FactorialFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long fact = 1;
+        if (n < 0) {
+            System.out.println("Invalid input.");
+            return;
+        }
+        for (int i = 1; i <= n; i++) fact *= i;
+        System.out.println("Factorial: " + fact);
+    }
+}
+
+
+Question 7 - Countdown (for loop)
+
+import java.util.Scanner;
+public class CountdownFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int counter = sc.nextInt();
+        for (int i = counter; i >= 1; i--) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+Question 8 - First is Smallest?
+
+import java.util.Scanner;
+public class FirstSmallest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
+        System.out.println("Is the first number the smallest? " + (a < b && a < c));
+    }
+}
+
+
+Question 9 - Largest Among Three
+
+import java.util.Scanner;
+public class LargestOfThree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
+        System.out.println("Is the first number the largest? " + (a > b && a > c));
+        System.out.println("Is the second number the largest? " + (b > a && b > c));
+        System.out.println("Is the third number the largest? " + (c > a && c > b));
+    }
+}
+
+
+Question 10 - Countdown (while loop)
+
+import java.util.Scanner;
+public class CountdownWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int counter = sc.nextInt();
+        while (counter >= 1) {
+            System.out.println(counter);
+            counter--;
+        }
+    }
+}
+
+
+Question 11 - Sum of N (while loop + formula)
+
+import java.util.Scanner;
+public class NaturalSumWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n <= 0) {
+            System.out.println("Not a natural number.");
+            return;
+        }
+        int sum = 0, i = 1;
+        while (i <= n) {
+            sum += i;
+            i++;
+        }
+        int formula = n * (n + 1) / 2;
+        System.out.println("While loop sum: " + sum);
+        System.out.println("Formula sum: " + formula);
+        System.out.println(sum == formula ? "Both match." : "Mismatch!");
+    }
+}
+
+
+Question 12 - Positive, Negative or Zero
+
+import java.util.Scanner;
+public class NumberType {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if (num > 0) System.out.println("Positive");
+        else if (num < 0) System.out.println("Negative");
+        else System.out.println("Zero");
+    }
+}
+
+
+Question 13 - Sum of N Natural Numbers with Natural Check
+
+import java.util.Scanner;
+public class SumNaturalCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        if (number > 0) {
+            int sum = number * (number + 1) / 2;
+            System.out.println("The sum of " + number + " natural numbers is " + sum);
+        } else {
+            System.out.println("The number " + number + " is not a natural number");
+        }
+    }
+}
+
+
+Question 14 - Voting Eligibility
+
+import java.util.Scanner;
+public class VotingEligibility {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        if (age >= 18)
+            System.out.println("The person's age is " + age + " and can vote.");
+        else
+            System.out.println("The person's age is " + age + " and cannot vote.");
+    }
+}
+
+
+Question 15 - Factorial using while loop
+
+import java.util.Scanner;
+public class FactorialWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long fact = 1;
+        if (n < 0) {
+            System.out.println("Invalid input.");
+            return;
+        }
+        int i = 1;
+        while (i <= n) {
+            fact *= i;
+            i++;
+        }
+        System.out.println("Factorial: " + fact);
+    }
+}
+
+----------------------------------------
+Question 16 - Greatest Factor using while loop
+----------------------------------------
+import java.util.Scanner;
+public class GreatestFactorWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(), counter = number - 1, greatestFactor = 1;
+        while (counter >= 1) {
+            if (number % counter == 0) {
+                greatestFactor = counter;
+                break;
+            }
+            counter--;
+        }
+        System.out.println("Greatest factor: " + greatestFactor);
+    }
+}
+
+----------------------------------------
+Question 17 - Power using while loop
+----------------------------------------
+import java.util.Scanner;
+public class PowerWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int power = sc.nextInt();
+        int result = 1, counter = 0;
+        while (counter < power) {
+            result *= number;
+            counter++;
+        }
+        System.out.println("Result: " + result);
+    }
+}
+
+----------------------------------------
+Question 18 - Greatest Factor using for loop
+----------------------------------------
+import java.util.Scanner;
+public class GreatestFactorFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(), greatestFactor = 1;
+        for (int i = number - 1; i >= 1; i--) {
+            if (number % i == 0) {
+                greatestFactor = i;
+                break;
+            }
+        }
+        System.out.println("Greatest factor: " + greatestFactor);
+    }
+}
+
+----------------------------------------
+Question 19 - Factors using while loop
+----------------------------------------
+import java.util.Scanner;
+public class FactorsWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        if (number <= 0) {
+            System.out.println("Enter a positive number.");
+            return;
+        }
+        int counter = 1;
+        while (counter <= number) {
+            if (number % counter == 0)
+                System.out.println(counter);
+            counter++;
+        }
+    }
+}
+
+----------------------------------------
+Question 20 - Multiples below 100 (while loop)
+----------------------------------------
+import java.util.Scanner;
+public class MultiplesBelow100While {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        if (number <= 0 || number >= 100) {
+            System.out.println("Invalid input.");
+            return;
+        }
+        int counter = 99;
+        while (counter > 1) {
+            if (counter % number == 0)
+                System.out.println(counter);
+            counter--;
+        }
+    }
+}
+
+// Question 21 - Employee Bonus
+import java.util.Scanner;
+public class EmployeeBonus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double salary = sc.nextDouble();
+        int years = sc.nextInt();
+        if (years > 5)
+            System.out.println("Bonus amount: " + (0.05 * salary));
+        else
+            System.out.println("No bonus for less than or equal to 5 years.");
+    }
+}
+
+// Question 22 - Factors (for loop)
+import java.util.Scanner;
+public class FactorsFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        for (int i = 1; i <= number; i++)
+            if (number % i == 0)
+                System.out.println(i);
+    }
+}
+
+// Question 23 - FizzBuzz (for loop)
+import java.util.Scanner;
+public class FizzBuzzFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        for (int i = 1; i <= num; i++) {
+            if (i % 15 == 0) System.out.println("FizzBuzz");
+            else if (i % 3 == 0) System.out.println("Fizz");
+            else if (i % 5 == 0) System.out.println("Buzz");
+            else System.out.println(i);
+        }
+    }
+}
+
+// Question 24 - Multiples below 100 (for loop)
+import java.util.Scanner;
+public class MultiplesBelow100 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        for (int i = 100; i >= 1; i--)
+            if (i % number == 0)
+                System.out.println(i);
+    }
+}
+
+// Question 25 - Multiplication Table from 6 to 9
+import java.util.Scanner;
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        for (int i = 6; i <= 9; i++)
+            System.out.println(number + " * " + i + " = " + (number * i));
+    }
+}
+
+// Question 26 - Odd or Even 1 to N
+import java.util.Scanner;
+public class OddEven {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 1; i <= n; i++)
+            System.out.println(i + " is " + (i % 2 == 0 ? "Even" : "Odd"));
+    }
+}
+
+// Question 27 - Power (for loop)
+import java.util.Scanner;
+public class PowerCalc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int base = sc.nextInt();
+        int power = sc.nextInt();
+        int result = 1;
+        for (int i = 1; i <= power; i++)
+            result *= base;
+        System.out.println("Result: " + result);
+    }
+}
+
+// Question 28 - Youngest & Tallest
+import java.util.Scanner;
+public class YoungestTallest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int age1 = sc.nextInt(), height1 = sc.nextInt();
+        int age2 = sc.nextInt(), height2 = sc.nextInt();
+        int age3 = sc.nextInt(), height3 = sc.nextInt();
+
+        int youngest = Math.min(age1, Math.min(age2, age3));
+        int tallest = Math.max(height1, Math.max(height2, height3));
+
+        System.out.println("Youngest Age: " + youngest);
+        System.out.println("Tallest Height: " + tallest);
+    }
+}
+
+// Question 29 - FizzBuzz (while loop)
+import java.util.Scanner;
+public class FizzBuzzWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt(), i = 1;
+        while (i <= num) {
+            if (i % 15 == 0) System.out.println("FizzBuzz");
+            else if (i % 3 == 0) System.out.println("Fizz");
+            else if (i % 5 == 0) System.out.println("Buzz");
+            else System.out.println(i);
+            i++;
+        }
+    }
+}
+
+// Question 30 - Leap Year (multiple if)
+import java.util.Scanner;
+public class LeapYearIfElse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int year = sc.nextInt();
+        if (year < 1582) {
+            System.out.println("Invalid year (before Gregorian calendar)");
+        } else if (year % 400 == 0) {
+            System.out.println("Leap Year");
+        } else if (year % 100 == 0) {
+            System.out.println("Not a Leap Year");
+        } else if (year % 4 == 0) {
+            System.out.println("Leap Year");
+        } else {
+            System.out.println("Not a Leap Year");
+        }
+    }
+}
+
+// Question 31 - Leap Year (logical if)
+import java.util.Scanner;
+public class LeapYearLogical {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int year = sc.nextInt();
+        if (year >= 1582 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
+            System.out.println("Leap Year");
+        } else {
+            System.out.println("Not a Leap Year");
+        }
+    }
+}
+
+// Question 32 - Grade from 3 subjects
+import java.util.Scanner;
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int physics = sc.nextInt(), chemistry = sc.nextInt(), maths = sc.nextInt();
+        double avg = (physics + chemistry + maths) / 3.0;
+        System.out.println("Average: " + avg);
+        if (avg >= 90) System.out.println("Grade: A");
+        else if (avg >= 80) System.out.println("Grade: B");
+        else if (avg >= 70) System.out.println("Grade: C");
+        else if (avg >= 60) System.out.println("Grade: D");
+        else System.out.println("Grade: F");
+    }
+}
+
+// Question 33 - Prime Number
+import java.util.Scanner;
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        boolean isPrime = num > 1;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        System.out.println(num + " is " + (isPrime ? "Prime" : "Not Prime"));
+    }
+}
+
+// Question 34 - Armstrong Number
+import java.util.Scanner;
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(), original = number, sum = 0;
+        while (number > 0) {
+            int digit = number % 10;
+            sum += digit * digit * digit;
+            number /= 10;
+        }
+        System.out.println(original + " is " + (sum == original ? "an Armstrong Number" : "not an Armstrong Number"));
+    }
+}
+
+// Question 35 - Count Digits
+import java.util.Scanner;
+public class DigitCounter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(), count = 0;
+        while (number != 0) {
+            number /= 10;
+            count++;
+        }
+        System.out.println("Number of digits: " + count);
+    }
+}
+
+// Question 36 - Abundant Number
+import java.util.Scanner;
+public class Abundant {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(), sum = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) sum += i;
+        }
+        System.out.println(number + " is " + (sum > number ? "Abundant" : "Not Abundant"));
+    }
+}
+
+// Question 37 - Day of the Week (Zeller's Congruence)
+import java.util.Scanner;
+public class DayOfWeek {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt(), d = sc.nextInt(), y = sc.nextInt();
+        int y0 = y - (14 - m) / 12;
+        int x = y0 + y0/4 - y0/100 + y0/400;
+        int m0 = m + 12 * ((14 - m) / 12) - 2;
+        int dayOfWeek = (d + x + 31 * m0 / 12) % 7;
+        System.out.println("Day of the week (0=Sun ... 6=Sat): " + dayOfWeek);
+    }
+}
+
+// Question 38 - BMI Calculator
+import java.util.Scanner;
+public class BMI {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double weight = sc.nextDouble(); // kg
+        double height = sc.nextDouble(); // cm
+        height /= 100.0; // convert to meters
+        double bmi = weight / (height * height);
+        System.out.println("BMI: " + bmi);
+    }
+}
+
+// Question 39 - Harshad Number
+import java.util.Scanner;
+public class Harshad {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(), sum = 0, temp = number;
+        while (temp > 0) {
+            sum += temp % 10;
+            temp /= 10;
+        }
+        System.out.println(number + " is " + (number % sum == 0 ? "a Harshad Number" : "Not a Harshad Number"));
+    }
+}
+
+// Question 40 - Calculator (switch-case)
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextDouble(), b = sc.nextDouble();
+        String op = sc.next();
+        switch (op) {
+            case "+": System.out.println("Result: " + (a + b)); break;
+            case "-": System.out.println("Result: " + (a - b)); break;
+            case "*": System.out.println("Result: " + (a * b)); break;
+            case "/": System.out.println(b != 0 ? "Result: " + (a / b) : "Division by zero!"); break;
+            default: System.out.println("Invalid Operator");
+        }
+    }
+}
