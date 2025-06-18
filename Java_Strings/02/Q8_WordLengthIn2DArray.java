@@ -1,0 +1,1 @@
+// TODO: Implement Q8: Return word and its length as 2D array
