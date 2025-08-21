@@ -1,0 +1,76 @@
+1. Food Delivery System
+
+Class Customer:
+    Attributes:
+        name
+        address
+
+Class Restaurant:
+    Attributes:
+        name
+        location
+
+Class DeliveryBoy:
+    Attributes:
+        name
+        phoneNumber
+
+Class Order:
+    Attributes:
+        customer : Customer
+        restaurant : Restaurant
+        deliveryBoy : DeliveryBoy
+        items : List of Strings
+        totalAmount
+
+    Constructor(customer, restaurant, deliveryBoy, items, totalAmount):
+        Set all attributes
+
+    Method displayOrderDetails():
+        Print customer.name and address
+        Print restaurant.name and location
+        Print deliveryBoy.name and phoneNumber
+        Print items and totalAmount
+
+2. Medical Record Manager
+
+Interface Searchable:
+    Method search(keyword)
+
+Interface Printable:
+    Method print()
+
+Abstract Class MedicalReport implements Searchable, Printable:
+    Attributes:
+        reportId
+        patientName
+        date
+
+    Abstract Method search(keyword)
+    Abstract Method print()
+
+Class LabReport inherits MedicalReport:
+    Attributes:
+        testResults
+
+    Method search(keyword):
+        If keyword in testResults:
+            Return true
+        Else:
+            Return false
+
+    Method print():
+        Print reportId, patientName, testResults
+
+Class Prescription inherits MedicalReport:
+    Attributes:
+        medicines
+
+    Method search(keyword):
+        If keyword in medicines:
+            Return true
+        Else:
+            Return false
+
+    Method print():
+        Print reportId, patientName, medicines
