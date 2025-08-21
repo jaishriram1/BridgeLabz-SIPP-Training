@@ -1,0 +1,32 @@
+1. Student Score Storage
+
+Initialize Map scores
+
+Add student names and scores to scores
+
+Function getTopScorer():
+    Set maxScore = -1
+    Set topScorer = ""
+    For each entry in scores:
+        If entry.score > maxScore:
+            Set maxScore = entry.score
+            Set topScorer = entry.name
+    Return topScorer
+
+2. Employee Record Keeper
+
+Class Employee:
+    Attributes:
+        name
+        department
+
+Initialize List employees
+
+Add Employee objects to employees
+
+Function filterByDepartment(dept):
+    Initialize List filtered
+    For each employee in employees:
+        If employee.department == dept:
+            Add employee to filtered
+    Return filtered
