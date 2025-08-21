@@ -1,0 +1,43 @@
+1. Library Book Filter
+
+Class Book:
+    Attributes:
+        title
+        author
+        publishYear
+        rating
+
+Initialize List<Book> bookList
+
+Function filterBooks():
+    Initialize List<Book> filteredBooks
+    For each book in bookList:
+        If book.publishYear > 2015 AND book.rating > 4.5:
+            Add book to filteredBooks
+    Return filteredBooks
+
+2. Payment Processor
+
+Interface PaymentMethod:
+    Method processPayment()
+
+Class UPI implements PaymentMethod:
+    Attributes: upiId
+    Method processPayment(): Print "Processing UPI payment"
+
+Class Card implements PaymentMethod:
+    Attributes: cardNumber, expiry
+    Method processPayment(): Print "Processing Card payment"
+
+Class NetBanking implements PaymentMethod:
+    Attributes: bankName, accountNumber
+    Method processPayment(): Print "Processing NetBanking payment"
+
+Generic Class Transaction<T extends PaymentMethod>:
+    Attribute: T paymentMethod
+
+    Constructor(paymentMethod):
+        Set this.paymentMethod
+
+    Method execute():
+        Call paymentMethod.processPayment()
