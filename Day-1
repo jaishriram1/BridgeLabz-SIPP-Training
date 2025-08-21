@@ -1,0 +1,36 @@
+1. Pet Adoptation App
+
+Class Pet:
+    Attributes:
+        name
+        age
+    Constructor(name, age):
+        Set name and age
+
+Class Dog inherits Pet:
+    Constructor(name, age):
+        Call Pet constructor
+
+Class Cat inherits Pet:
+    Constructor(name, age):
+        Call Pet constructor
+
+Class Bird inherits Pet:
+    Constructor(name, age):
+        Call Pet constructor
+
+2. Library Membership Tracker
+
+Class Member:
+    Attributes:
+        name
+        id
+        membershipDate
+    Constructor(name, id, membershipDate):
+        Set attributes
+
+    Method isMembershipValid():
+        If currentDate - membershipDate < 1 year:
+            Return true
+        Else:
+            Return false
