@@ -1,0 +1,43 @@
+1. Online Cart System
+
+Class Item:
+    Attributes:
+        name
+        price
+
+Class Cart:
+    Attribute:
+        List<Item> items
+
+    Method addItem(item):
+        Add item to items list
+
+    Generic Method calculateTotalPrice(List<T> itemList):
+        total = 0
+        For each item in itemList:
+            total += item.price
+        Return total
+
+2. Hospital Department Mapper
+
+Class Doctor:
+    Attributes:
+        name
+        specialization
+
+Initialize Map<String, List<Doctor>> departmentMap
+
+Function addDoctorToDepartment(department, doctor):
+    If department not in departmentMap:
+        Create new list and add doctor
+        Put department -> list in map
+    Else:
+        Add doctor to existing list
+
+Function filterDoctorsBySpecialization(specialization):
+    Initialize List<Doctor> filteredDoctors
+    For each department in departmentMap:
+        For each doctor in departmentMap[department]:
+            If doctor.specialization == specialization:
+                Add doctor to filteredDoctors
+    Return filteredDoctors
