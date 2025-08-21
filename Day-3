@@ -1,0 +1,55 @@
+1. Patient Record Hashing
+
+Class Patient:
+    Attributes:
+        id
+        name
+        age
+        diagnosis
+
+Initialize Map patientMap  // Key: patient ID, Value: Patient object
+
+Function addPatient(patient):
+    patientMap[patient.id] = patient
+
+Function getPatient(id):
+    If id exists in patientMap:
+        Return patientMap[id]
+    Else:
+        Return "Patient not found"
+
+Function updatePatient(id, updatedInfo):
+    If id exists in patientMap:
+        Update patientMap[id] with updatedInfo
+    Else:
+        Return "Patient not found"
+
+Function deletePatient(id):
+    If id exists in patientMap:
+        Remove patientMap[id]
+    Else:
+        Return "Patient not found"
+
+2. Maze Solver Bot
+
+Function solveMaze(maze, x, y, solution):
+    If (x, y) is outside maze bounds OR maze[x][y] is blocked:
+        Return false
+
+    If (x, y) is the destination:
+        Mark solution[x][y] = 1
+        Return true
+
+    If maze[x][y] is already visited:
+        Return false
+
+    Mark solution[x][y] = 1  // Choose this cell
+
+    // Try moving in all directions
+    If solveMaze(maze, x+1, y, solution): Return true  // Down
+    If solveMaze(maze, x, y+1, solution): Return true  // Right
+    If solveMaze(maze, x-1, y, solution): Return true  // Up
+    If solveMaze(maze, x, y-1, solution): Return true  // Left
+
+    Mark solution[x][y] = 0  // Backtrack
+    Return false
