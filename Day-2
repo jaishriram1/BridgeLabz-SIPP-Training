@@ -1,0 +1,42 @@
+1. Online Qiuz Timer
+
+Initialize Array timeSlots of size N  // N = number of questions
+Initialize Integer currentIndex = 0
+
+Function assignTimeSlots():
+    For i from 0 to N-1:
+        timeSlots[i] = defaultTimePerQuestion
+
+Function startQuiz():
+    While quiz is active:
+        currentTime = timeSlots[currentIndex]
+        If currentTime <= warningThreshold:
+            Trigger warning for current question
+        Wait for 1 second
+        Decrement timeSlots[currentIndex]
+        If timeSlots[currentIndex] == 0:
+            Move to next question
+            currentIndex = (currentIndex + 1) mod N
+
+2. Job Scheduler
+
+Class Job:
+    Attributes:
+        jobId
+        deadline
+        processingTime
+
+    Method getPriority():
+        Return deadline - processingTime  // Lower value = higher urgency
+
+Initialize PriorityQueue<Job> jobQueue
+    // Priority based on getPriority()
+
+Function addJob(job):
+    Insert job into jobQueue
+
+Function processJobs():
+    While jobQueue is not empty:
+        job = jobQueue.poll()  // Get job with highest priority
+        Execute job
+        Log job completion
