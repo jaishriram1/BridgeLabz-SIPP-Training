@@ -1,0 +1,31 @@
+1. Undo Feature in Text Editor
+
+Initialize Stack undoStack
+
+Function type(text):
+    Push text to undoStack
+
+Function undo():
+    If undoStack is not empty:
+        Pop and return last text
+    Else:
+        Return "Nothing to undo"
+
+2. Call Center Queue Management
+
+Initialize Queue normalQueue
+Initialize Queue emergencyQueue
+
+Function addCustomer(name, isEmergency):
+    If isEmergency:
+        Add name to emergencyQueue
+    Else:
+        Add name to normalQueue
+
+Function serveCustomer():
+    If emergencyQueue is not empty:
+        Return emergencyQueue.dequeue()
+    Else if normalQueue is not empty:
+        Return normalQueue.dequeue()
+    Else:
+        Return "No customers"
