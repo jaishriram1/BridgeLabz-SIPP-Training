@@ -1,0 +1,23 @@
+Question 3
+////////////////////////////
+CLASS Node
+    ATTRIBUTES: stopName, next
+
+CLASS BusRoute
+    ATTRIBUTE: head
+    METHOD insertStop(afterStop, newStop)
+        FIND afterStop node
+        INSERT newStop after it
+    METHOD deleteStop(stopName)
+        TRAVERSE list, REMOVE stopName
+    METHOD searchStop(stopName)
+        TRAVERSE list, RETURN true if found
+    METHOD displayRoute()
+        PRINT all stops in order
+
+MAIN
+    INITIALIZE route: Depot -> Main Street -> City Mall -> Hospital -> Airport
+    INSERT University Stop after City Mall
+    DELETE Hospital
+    SEARCH for Airport -> Print result
+//////////////////////////////////

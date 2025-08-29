@@ -1,0 +1,35 @@
+Question 4
+////////////////////////////////////////
+CLASS AttendanceSystem
+    ATTRIBUTE: attendance[30][30]
+
+    METHOD markAttendance(studentId, day, status)
+        attendance[studentId][day] = status
+
+    METHOD dailySummary(day)
+        count = 0
+        FOR each student
+            IF attendance[student][day] == 1
+                count++
+        PRINT "Total present on Day",day,"=",count
+
+    METHOD monthlySummary(studentId)
+        total = 0
+        FOR each day
+            IF attendance[studentId][day] == 1
+                total++
+        PRINT "Student ", studentId, " attended ", total, " days"
+
+    METHOD defaulterList()
+        FOR each student
+            total = monthlySummary(student)
+            IF total < 22 (75% of 30 days)
+                PRINT "Student ", student, " is defaulter"
+
+MAIN
+    CREATE AttendanceSystem
+    Mark attendance daily
+    CHECK dailySummary(day 10)
+    CHECK monthlySummary(student 5)
+    PRINT defaulter list
+/////////////////////////////////////////////////
