@@ -1,0 +1,27 @@
+Question 2
+/////////////////////////////////////
+Class Room:
+    Attributes:
+        roomNumber
+        customerName
+        daysStayed
+    Methods:
+        calculateBill()  # overridden in subclasses
+
+Class DeluxeRoom extends Room:
+    Method calculateBill():
+        totalBill = daysStayed * 3000
+        print "Room Type: Deluxe, Customer: customerName, Nights: daysStayed, Bill: totalBill"
+
+Class SuiteRoom extends Room:
+    Method calculateBill():
+        totalBill = daysStayed * 5000
+        print "Room Type: Suite, Customer: customerName, Nights: daysStayed, Bill: totalBill"
+
+Main:
+    Create DeluxeRoom r1 = ("R101", "Ravi", 3)
+    r1.calculateBill()
+
+    Create SuiteRoom r2 = ("S201", "Anita", 2)
+    r2.calculateBill()
+///////////////////////////////////////////

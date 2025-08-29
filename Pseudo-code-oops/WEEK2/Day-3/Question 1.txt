@@ -1,0 +1,44 @@
+Question 1
+////////////////////////////
+Class Course:
+    Attributes:
+        title
+        duration
+        price
+    Methods:
+        getCourseDetails()
+
+Class Student:
+    Attributes:
+        name
+        email
+        enrolledCourses = empty list
+    Methods:
+        enrollCourse(course):
+            if course not in enrolledCourses:
+                add course to enrolledCourses
+                print "Enrolled successfully"
+            else:
+                print "Already enrolled"
+        
+        viewEnrolledCourses():
+            print "Student's Enrolled Courses:"
+            for each course in enrolledCourses:
+                print course.title, course.duration, course.price
+
+Main:
+    Create Course objects:
+        c1 = "Java Programming Basics", 6 weeks, 4999
+        c2 = "Data Structures in Java", 8 weeks, 5999
+        c3 = "Web Development", 10 weeks, 6999
+
+    Create Student Amit
+        amit.enrollCourse(c1)
+        amit.enrollCourse(c2)
+        amit.viewEnrolledCourses()
+
+    Create Student Priya
+        priya.enrollCourse(c3)
+        priya.enrollCourse(c1)
+        priya.viewEnrolledCourses()
+///////////////////////////////
