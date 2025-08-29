@@ -1,0 +1,25 @@
+Question 3
+////////////////////////////////////////
+Function binarySearch(sortedList, target):
+    start = 0
+    end = length(sortedList) - 1
+    while start <= end:
+        mid = (start + end) / 2
+        if sortedList[mid] == target:
+            return mid
+        else if target < sortedList[mid]:
+            end = mid - 1
+        else:
+            start = mid + 1
+    return -1
+
+Main:
+    catalog = ["earbuds", "bag", "camera", "laptop", "shoes", "phone", "watch"]
+    sort catalog
+    userInput = "Laptop"
+    index = binarySearch(catalog, userInput)
+    if index != -1:
+        print "Product available:", catalog[index]
+    else:
+        print "Product not found"
+/////////////////////////////////////////////////////////

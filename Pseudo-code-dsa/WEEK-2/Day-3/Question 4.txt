@@ -1,0 +1,35 @@
+Question 4
+/////////////////////////////////////////////
+Class Student:
+    Attributes:
+        name
+        marks
+
+Function mergeSort(studentList):
+    if size of studentList <= 1:
+        return studentList
+    mid = size / 2
+    left = mergeSort(left half)
+    right = mergeSort(right half)
+    return merge(left, right)
+
+Function merge(left, right):
+    mergedList = empty list
+    while left and right not empty:
+        if left[0].marks > right[0].marks:
+            add left[0] to mergedList
+        else if left[0].marks == right[0].marks:
+            if left[0].name < right[0].name:
+                add left[0] to mergedList
+            else:
+                add right[0] to mergedList
+        else:
+            add right[0] to mergedList
+    append remaining elements
+    return mergedList
+
+Main:
+    students = [("A",92),("B",92),("C",85),("D",78),("E",92)]
+    sortedStudents = mergeSort(students)
+    print sortedStudents
+///////////////////////////////////////////////////
