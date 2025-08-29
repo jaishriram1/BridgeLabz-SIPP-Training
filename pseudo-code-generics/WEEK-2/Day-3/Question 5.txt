@@ -1,0 +1,28 @@
+Question 5
+/////////////////////////////////////////////////////
+Class Doctor:
+    Attributes:
+        name
+        specialization
+        experienceYears
+
+Main:
+    departmentMap = empty Map<String, List<Doctor>>
+
+    Add doctors:
+        departmentMap["Cardiology"] = [Dr. Mehta, Dr. Kapoor]
+        departmentMap["Neurology"] = [Dr. Sharma, Dr. Das]
+
+    Query doctors:
+        inputDept = "Neurology"
+        if inputDept in departmentMap:
+            for each doctor in departmentMap[inputDept]:
+                print doctor.name, doctor.specialization, doctor.experienceYears
+        else:
+            print "No doctors available"
+
+    Optional Stream filter:
+        experiencedDoctors = departmentMap[inputDept].stream()
+            .filter(doctor.experienceYears > 10)
+            .collect(toList)
+///////////////////////////////////////////////////////////

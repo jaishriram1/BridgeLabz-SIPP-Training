@@ -1,0 +1,34 @@
+Question 6
+////////////////////////////////////////////////
+Class Transaction<T>:
+    Attributes:
+        transactionDetails of type T
+    Method processPayment():
+        print "Processing payment..."
+        transactionDetails.printDetails()
+
+Class UPI:
+    Attributes: upiId, amount, merchantName
+    Method printDetails():
+        print "Payment of ₹amount via UPI successful for merchantName"
+
+Class Card:
+    Attributes: cardNumber, cvv, expiryDate, amount
+    Method printDetails():
+        print "Payment of ₹amount via Card ending last4Digits successful"
+
+Class NetBanking:
+    Attributes: bankName, accountNumber, amount
+    Method printDetails():
+        print "Payment of ₹amount via NetBanking (bankName) successful"
+
+Main:
+    t1 = Transaction<UPI>(UPI("user@upi", 1200, "Amazon"))
+    t1.processPayment()
+
+    t2 = Transaction<Card>(Card("1234-5678-9876-5432","123","12/27",5000))
+    t2.processPayment()
+
+    t3 = Transaction<NetBanking>(NetBanking("HDFC", "00112233", 8000))
+    t3.processPayment()
+///////////////////////////////////////////////////////////////
