@@ -1,0 +1,28 @@
+Question 6
+////////////////////////////////
+CLASS SurveyResponse
+    ATTRIBUTES: restaurantName, rating
+
+CLASS SurveyAnalyzer
+    METHOD generateReport(responses)
+        MAP<String, List<Integer>> groupedByRestaurant
+        FOR each response
+            ADD rating to groupedByRestaurant[restaurantName]
+
+        MAP<String, Double> averageRatings
+        FOR each restaurant in groupedByRestaurant
+            avg = SUM(ratings)/COUNT(ratings)
+            averageRatings[restaurant] = avg
+
+        FIND max avg restaurant
+        FIND min avg restaurant
+
+        PRINT "Average ratings per restaurant"
+        PRINT averageRatings
+        PRINT "Highest rated: ", restaurantWithMax
+        PRINT "Lowest rated: ", restaurantWithMin
+
+MAIN
+    CREATE list of SurveyResponse objects
+    CALL SurveyAnalyzer.generateReport(list)
+//////////////////////////////////////////////////////

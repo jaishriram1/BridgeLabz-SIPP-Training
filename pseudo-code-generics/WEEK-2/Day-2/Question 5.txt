@@ -1,0 +1,16 @@
+Question 5
+/////////////////////////////
+CLASS WordCounter
+    METHOD countWords
+        CLEAN text (remove punctuation, lowercase)
+        SPLIT into words
+        MAP<String, Integer> wordCount
+        FOR each word
+            INCREMENT wordCount[word]
+        SORT wordCount by frequency
+        PRINT words with counts
+
+MAIN
+    INPUT paragraph
+    CALL countWords
+//////////////////////////////////////////////
