@@ -1,0 +1,27 @@
+Question 1
+///////////////////////////////////
+CLASS User
+    ATTRIBUTES: username, password
+    METHOD login()
+        PRINT "login"
+
+CLASS Student EXTENDS User
+    ATTRIBUTE: enrolledCourse
+    METHOD login()
+        IF username/password valid AND enrolledCourse != null
+            PRINT "Access granted to exams"
+        ELSE
+            PRINT "Student login failed"
+
+CLASS Admin EXTENDS User
+    ATTRIBUTE: hasAdminPrivileges
+    METHOD login()
+        IF username/password valid AND hasAdminPrivileges = true
+            PRINT "Access granted to exam management tools"
+        ELSE
+            PRINT "Admin login failed"
+
+MAIN
+    CREATE Student and Admin objects
+    CALL login() for both
+//////////////////////////////////////

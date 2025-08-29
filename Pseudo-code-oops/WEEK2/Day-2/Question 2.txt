@@ -1,0 +1,34 @@
+Question 2
+//////////////////////////////////
+CLASS Vehicle
+    ATTRIBUTES: vehicleNumber, entryTime
+    METHOD calculateFee
+        RETURN 0
+
+CLASS Car EXTENDS Vehicle
+    METHOD calculateFee
+        hours = difference between exitTime and entryTime
+        fee = 50 + (hours - 1) * 30
+        RETURN fee
+
+CLASS Bike EXTENDS Vehicle
+    METHOD calculateFee
+        hours = difference between exitTime and entryTime 
+        fee = 20 + (hours - 1) * 10
+        RETURN fee
+
+CLASS Truck EXTENDS Vehicle
+    METHOD calculateFee
+        hours = difference between exitTime and entryTime 
+        fee = 100 + (hours - 1) * 50
+        RETURN fee
+
+MAIN
+    CREATE Car object (car at 10:00 AM)
+    CREATE Bike object (bike at 11:15 AM)
+    CREATE Truck object (truck at 09:30 AM)
+
+    Car exits 1:30 PM → CALL calculateFee() → Print
+    Bike exits 12:00 PM → CALL calculateFee() → Print
+    Truck exits 2:00 PM → CALL calculateFee() → Print
+/////////////////////////////////////////
